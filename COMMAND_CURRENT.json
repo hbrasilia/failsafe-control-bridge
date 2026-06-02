@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "command_id": "FS-CMD-20260602-BRIDGE-REPAIR-001",
-  "packet_id": "PUBLIC-BRIDGE-REPAIR-001",
-  "mode": "EXECUTE",
-  "status": "RUNNING",
-  "next_action": "Repair public bridge mojibake and align with canonical inventory.",
+  "command_id": "FS-CMD-20260602-FS-INFRA-017-PREGATE",
+  "packet_id": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
+  "mode": "PREGATE_ONLY",
+  "status": "BLOCKED",
+  "next_action": "Wait for configuration of missing GitHub secrets and snapshot confirmation.",
   "forbidden_actions": ["FS-INFRA", "staging_physical", "VPS", "database", "secrets", "deploy", "new_feature"]
 }

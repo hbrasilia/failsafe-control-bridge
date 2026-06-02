@@ -1,1 +1,1 @@
-Repair public bridge mojibake and align with canonical inventory.
+Wait for configuration of missing GitHub secrets and snapshot confirmation.
