@@ -1,11 +1,11 @@
-﻿# BLOCKERS â€” Bloqueios de ExecuÃ§Ã£o
+# BLOCKERS - Execution Blockers
 
-## ðŸš« UI Failsafe01 Import Incomplete (UI_FAILSAFE01_IMPORT_INCOMPLETE)
-A importaÃ§Ã£o de menus, Ã­cones, temas, rotas clicÃ¡veis e paridade visual do failsafe01 para o hub central nÃ£o estÃ¡ finalizada. Esta tarefa Ã© P0 impeditiva.
+## UI Failsafe01 Import Incomplete (UI_FAILSAFE01_IMPORT_INCOMPLETE)
+The import of menus, icons, themes, clickable routes and visual parity of failsafe01 to the central hub is not completed. This task is a P0 blocker.
 
-## ðŸš« Staging FÃ­sico (STAGING_PHYSICAL_BLOCKED_WAITING_GATES)
-O staging fÃ­sico permanece bloqueado atÃ© a comprovaÃ§Ã£o dos seguintes gates:
-1. ComprovaÃ§Ã£o de Snapshot na VPS.
-2. Blindagem e validaÃ§Ã£o das regras UFW do firewall.
-3. Provisionamento de secrets SSH e credentials.
-4. AprovaÃ§Ã£o formal do gestor.
+## Staging Physical (STAGING_PHYSICAL_BLOCKED_WAITING_GATES)
+Physical staging remains blocked until the following gates are verified:
+1. Snapshot verification on VPS.
+2. Firewall UFW rules validation.
+3. Provisioning of SSH secrets and credentials.
+4. Formal manager approval.
