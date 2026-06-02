@@ -1,1 +1,16 @@
-﻿{"updated_at":"2026-06-02 17:14:02","next_action":"FAILSAFE01-UI-FINAL-RECONCILIATION-001","blocker_class":"UI_FAILSAFE01_IMPORT_INCOMPLETE, STAGING_PHYSICAL_BLOCKED_WAITING_GATES","latest_gcrc_status":"FINAL_MERGED_AND_VALIDATED","active_packet":"FAILSAFE01_UI_FINAL_RECONCILIATION","current_status":"ACTIVE","latest_pr":"https://github.com/hbrasilia/failsafe/pull/187"}
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-06-02T19:00:00-03:00",
+  "current_command_id": "FS-CMD-20260602-001",
+  "active_packet": "CONTROL-BRIDGE-TRACE-AND-SMOKE-001",
+  "current_status": "RUNNING",
+  "latest_gcrc_status": "",
+  "latest_pr": "",
+  "blocker_class": "",
+  "next_action": "Validate public bridge readability and command traceability.",
+  "human_action_required": false,
+  "staging_physical": "BLOCKED_WAITING_GATES",
+  "ui_status": "ACCEPTED_BY_GCRC_PR_188_MONITOR_ONLY",
+  "public_bridge_policy": "sanitized_ascii_only_live_state_not_history",
+  "source_of_truth": "private repo hbrasilia/failsafe"
+}
