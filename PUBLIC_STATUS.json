@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-06-02T20:27:12-03:00",
+  "updated_at": "2026-06-02T20:30:47-03:00",
   "current_status": "NEEDS_EXECUTION",
   "active_packet": "PUBLIC-BRIDGE-REPAIR-001",
   "latest_gcrc_status": "INVENTORY_ONLY_COMPLETED",
   "latest_accepted_decision": "DEC-028",
+  "issueops_status": "ACTIVE_BY_GCRC_PR_191",
   "missing_decisions": ["DEC-029", "DEC-030", "DEC-031", "DEC-032", "DEC-033"],
   "blocker_class": "",
   "next_action": "Repair public bridge mojibake and align with canonical inventory.",
