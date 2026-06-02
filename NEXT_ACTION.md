@@ -1,5 +1,7 @@
 ﻿# NEXT_ACTION â€” PrÃ³ximas AÃ§Ãµes do Failsafe ECO
 
+PrÃ³xima aÃ§Ã£o prioritÃ¡ria: **FAILSAFE01-UI-FINAL-RECONCILIATION-001** (Executar a reconciliaÃ§Ã£o e paridade visual completa da UI failsafe01 no hub).
+
 # Next Actions Queue â€” ControlKit 0.12
 
 ## ðŸŽ¯ P0 - Fila de ExecuÃ§Ã£o Remota (Autodispatch)
@@ -14,7 +16,7 @@
 8.  **CodificaÃ§Ã£o da Fatia Funcional P0 (MVP-IMPLEMENTATION-SLICE-001)**: [CONCLUÃDO - PR #154 mesclado, cÃ³digo navegÃ¡vel 100% integrado].
 9.  **Plano de Staging VPS Contabo (VPS-STAGING-PLAN-001)**: [CONCLUÃDO - PR #155 mesclado, topologia e gates de seguranÃ§a consolidados].
 10. **Alinhamento do FailsafeJUD HostGator (JUD-ALIGNMENT-FOLLOWUP-001)**: [CONCLUÃDO - PR #156 mesclado, limitaÃ§Ãµes e reutilizaÃ§Ã£o mapeadas].
-11. **PrÃ³xima Fila PrioritÃ¡ria (Recomendado)**: Iniciar o packet **FS-INFRA-017 / RLS-STAGE-001** (implantaÃ§Ã£o fÃ­sica da infraestrutura de banco PostgreSQL com extensÃ£o `pgvector` no staging da VPS Contabo sob os gates aprovados da DEC-012, e configuraÃ§Ã£o de polÃ­ticas de RLS e multi-tenant).
+11. **PrÃ³xima Fila PrioritÃ¡ria (Recomendado)**: Executar o packet **FAILSAFE01-UI-FINAL-RECONCILIATION-001** (reconciliaÃ§Ã£o e paridade visual definitiva da UI do failsafe01 no hub). O packet **FS-INFRA-017 / RLS-STAGE-001** estÃ¡ pausado/bloqueado aguardando esta finalizaÃ§Ã£o.
 12. **ConsolidaÃ§Ã£o do Mandato de ExecuÃ§Ã£o ContÃ­nua (DEC-015)**: [CONCLUÃDO - Branch chore/mandato-execucao-continua mesclada com sucesso nas memÃ³rias canÃ´nicas].
 13. **Fatia Funcional P1 - GestÃ£o de PeÃ§as (MVP-SLICE-002-PARTS-APPROVALS)**: [CONCLUÃDO - Estoque mock, reserva local, Pedido de Compra Interno e painel administrativo de orÃ§amentos integrados na branch feature/mvp-parts-approvals-slice-002].
 14. **Fatia Funcional P2 - OrÃ§amentos, AlÃ§adas e Faturamento (MVP-SLICE-003-BUDGET-BILLING-LITE)**: [CONCLUÃDO - OrÃ§amento consolidado mÃ£o de obra (R$ 250) + peÃ§as, alÃ§adas dinÃ¢micas (TÃ©cnico, Coordenador, Gerente, Diretor), faturamento mock com chave failsafe_invoices, aba financeira Admin e Dashboard estendido 5 colunas integrados na branch feature/mvp-budget-billing-lite-slice-003].
@@ -32,6 +34,8 @@
 24. **Estado CanÃ´nico ObrigatÃ³rio e Anti-Esquecimento (hotfix/devhub-canonical-state-enforcement)**: [CONCLUÃDO - Formalizada a proibiÃ§Ã£o de dependÃªncia de memÃ³ria de chat, com o registro de regras e novas diretrizes de falso positivo em AGENTS.md, PROJECT_MEMORY.md e runbooks locais sob a DEC-026].
 25. **Enforce do Estado CanÃ´nico e CriaÃ§Ã£o do STATE_PACK.md (chore/dec-026-state-pack-enforcement)**: [CONCLUÃDO - CriaÃ§Ã£o da fonte unificada e persistente de estado canÃ´nico `STATE_PACK.md` e atualizaÃ§Ã£o das diretrizes contra regressÃµes cognitivas baseadas em chat memory sob a DEC-026].
 26. **Enforce de GCRC Acceptance Gate (CONTROL-PLANE-GCRC-GATE-001)**: [CONCLUÃDO - Criados validate-gcrc scripts, template, workflow de integraÃ§Ã£o GitHub Actions e runbook de polÃ­tica de GCRC sob a DEC-027].
+27. **Failsafe Public Control Bridge SincronizaÃ§Ã£o (public-control-bridge-001)**: [CONCLUÃDO - Criada a ponte pÃºblica sanitizada failsafe-control-bridge, os scripts de publicaÃ§Ã£o e runbooks operacionais sob a DEC-028].
+28. **Retomada de UI Failsafe01 nos Workspaces Reais (FAILSAFE01-UI-FINAL-RECONCILIATION-001)**: [EM ANDAMENTO - Reconciliando layout, menus, opÃ§Ãµes, Ã­cones, estrutura e rotas clicÃ¡veis da UI failsafe01/Lovable nos caminhos ativos do Hub].
 
 ## ðŸš§ Gates Humanos
 *   AprovaÃ§Ã£o do desenho funcional do Piloto OEM (Boletins, OS multilateral e isolamento RLS).

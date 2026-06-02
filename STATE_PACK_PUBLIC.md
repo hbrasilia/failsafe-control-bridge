@@ -22,7 +22,7 @@ governance: no-regression
 
 ## 1. Estado Atual do Failsafe ECO
 - **Fase**: Phase 0.9 Discovery / Readiness do Piloto.
-- **Status do Portal**: ImportaÃ§Ã£o estÃ©tica e reconciliaÃ§Ã£o visual do `failsafe01` concluÃ­das com sucesso. O linter e os testes de login/redirecionamento Playwright estÃ£o passando com 100% de sucesso. Hotfix de tela branca dev:hub concluÃ­do e testado.
+- **Status do Portal**: ReconciliaÃ§Ã£o visual final da UI do `failsafe01` nos workspaces reais (`apps/hub-web-staging` e `apps/hub-web`) em andamento como P0. A importaÃ§Ã£o prÃ©via foi considerada incompleta (visual intermediÃ¡rio, menus, opÃ§Ãµes, Ã­cones, estrutura e rotas clicÃ¡veis nÃ£o integrados 100%).
 
 ## 2. ALPHA Vigente
 - **Anti-Manual**: Todo fluxo deve priorizar empacotamento de automaÃ§Ãµes (checks, lints, assunÃ§Ãµes) locais e na esteira de CI/CD.
@@ -93,7 +93,7 @@ governance: no-regression
 - DeclaraÃ§Ã£o de "COMPLETED" para a DEC-026 sem PR remoto mesclado ou com commit local apenas (rebaixado para NEEDS_COMPLETION no inÃ­cio do packet CONTROL-PLANE-GCRC-GATE-001).
 
 ## 17. PrÃ³ximo Packet Autorizado
-- **Atividade**: Iniciar o packet **FS-INFRA-017 / RLS-STAGE-001** (ConfiguraÃ§Ã£o fÃ­sica de banco PostgreSQL com pgvector e polÃ­ticas de RLS e multi-tenant no staging da VPS Contabo sob aprovaÃ§Ã£o formal).
+- **Atividade**: Executar o packet **FAILSAFE01-UI-FINAL-RECONCILIATION-001** para reconciliaÃ§Ã£o e paridade estÃ©tica definitiva da UI do `failsafe01` nos workspaces reais do Hub. O packet **FS-INFRA-017 / RLS-STAGE-001** estÃ¡ pausado/bloqueado aguardando a finalizaÃ§Ã£o da UI e liberaÃ§Ã£o dos gates fÃ­sicos de staging.
 
 ## 18. AÃ§Ãµes Proibidas
 - NÃ£o fazer push direto ou alteraÃ§Ã£o na branch `main` sem aprovaÃ§Ã£o do CI/CD.
@@ -116,4 +116,8 @@ Para qualquer tarefa tÃ©cnica ser considerada finalizada, exige-se:
   2. [NEXT_ACTIONS_QUEUE.md](file:///[REDACTED_LOCAL_PATH])
   3. [DECISIONS.md](file:///[REDACTED_LOCAL_PATH])
   4. Ãšltimo GCRC aceito (conforme registrado no [AI_LOG.md](file:///[REDACTED_LOCAL_PATH])).
+
+## 21. Ponte de Controle PÃºblica
+- **RepositÃ³rio**: [failsafe-control-bridge](https://github.com/hbrasilia/failsafe-control-bridge)
+- **Script de SincronizaÃ§Ã£o**: [publish-public-bridge.ps1](file:///[REDACTED_LOCAL_PATH])
 
