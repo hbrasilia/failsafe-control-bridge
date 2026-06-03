@@ -1,13 +1,7 @@
 {
   "schema_version": "1.0",
-  "current_status": "BLOCKED_BY_CREDENTIAL",
-  "active_packet": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
-  "next_action": "Provision GitHub Secrets and snapshot evidence, then rerun pre-gate.",
-  "ssh_shell": "present_verified",
-  "sudo": "present_verified",
-  "ufw": "present_verified",
-  "snapshot": "blocked_by_access",
-  "asustor": "blocked_by_access",
-  "required_secrets": "missing_required",
-  "go_no_go": "NO_GO"
+  "current_status": "NEEDS_EXECUTION",
+  "active_packet": "CONTROL-CENTER-FSCTL-VALIDATION-001",
+  "next_action": "Validate fsctl Windows/Linux and then sync dashboard status.",
+  "blocker": "FS_INFRA_BLOCKED_BY_CREDENTIALS_AND_SNAPSHOT"
 }

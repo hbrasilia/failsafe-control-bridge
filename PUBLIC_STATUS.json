@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-06-02T22:10:00-03:00",
-  "current_status": "BLOCKED_BY_CREDENTIAL",
-  "active_packet": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
-  "latest_gcrc_status": "INVENTORY_ONLY_COMPLETED",
+  "updated_at": "2026-06-02T22:15:00-03:00",
+  "current_status": "NEEDS_EXECUTION",
+  "active_packet": "CONTROL-CENTER-FSCTL-VALIDATION-001",
+  "latest_gcrc_status": "FINAL_MERGED_AND_VALIDATED",
   "latest_accepted_decision": "DEC-028",
-  "issueops_status": "ACTIVE_BY_GCRC_PR_195",
+  "issueops_status": "ACTIVE_BY_GCRC_PR_196",
   "missing_decisions": ["DEC-029", "DEC-030", "DEC-031", "DEC-032", "DEC-033"],
-  "blocker_class": "STAGING_PHYSICAL_BLOCKED_WAITING_GATES",
-  "next_action": "Provision GitHub Secrets and snapshot evidence, then rerun pre-gate.",
+  "blocker_class": "FS_INFRA_BLOCKED_BY_CREDENTIALS_AND_SNAPSHOT",
+  "next_action": "Validate fsctl Windows/Linux and then sync dashboard status.",
   "human_action_required": true,
   "staging_physical": "BLOCKED_WAITING_GATES",
   "source_of_truth": "private repo hbrasilia/failsafe",
@@ -19,5 +19,6 @@
   "snapshot": "blocked_by_access",
   "asustor": "blocked_by_access",
   "required_secrets": "missing_required",
-  "go_no_go": "NO_GO"
+  "go_no_go": "NO_GO",
+  "alpha_gap_audit": "completed"
 }
