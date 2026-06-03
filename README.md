@@ -1,14 +1,14 @@
 # Failsafe Public Control Bridge
 
-Sanitized public bridge for state synchronization, commands, GCRCs and blockers of Failsafe ECO.
+Ponte pública sanitizada para sincronização de estado, comandos, GCRCs e bloqueios do **Failsafe ECO**.
 
-## Operational Links
-* Current State: [STATE_PACK_PUBLIC.md](./STATE_PACK_PUBLIC.md)
-* Status JSON: [PUBLIC_STATUS.json](./PUBLIC_STATUS.json)
-* GCRC Inbox: [AG_GCRC_INBOX.md](./AG_GCRC_INBOX.md)
-* Next Action: [NEXT_ACTION.md](./NEXT_ACTION.md)
-* Command Queue: [COMMAND_QUEUE.md](./COMMAND_QUEUE.md)
-* Blockers: [BLOCKERS.md](./BLOCKERS.md)
+## 📌 Links Operacionais
+* **Estado Atual**: [STATE_PACK_PUBLIC.md](./STATE_PACK_PUBLIC.md)
+* **Status JSON**: [PUBLIC_STATUS.json](./PUBLIC_STATUS.json)
+* **Inbox de GCRCs**: [AG_GCRC_INBOX.md](./AG_GCRC_INBOX.md)
+* **Próxima Ação**: [NEXT_ACTION.md](./NEXT_ACTION.md)
+* **Fila de Comandos**: [COMMAND_QUEUE.md](./COMMAND_QUEUE.md)
+* **Bloqueios**: [BLOCKERS.md](./BLOCKERS.md)
 
 ---
-This repository is generated and updated automatically by the private Control Plane.
+*Este repositório é gerado e atualizado de forma automatizada pelo Control Plane privado.*

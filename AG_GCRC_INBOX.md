@@ -1,5 +1,7 @@
-Last accepted public status:
+# AG GCRC Inbox
 
-* COMMAND_ID: FS-CMD-20260602-CANONICAL-REALIGN
-* STATUS: INVENTORY_ONLY_COMPLETED
-* NOTE: Canonical inventory accepted. Public bridge repair is next.
+Fila de entrada para pareces GCRC.
+
+| Data | Packet | Status | PR | Commit |
+|---|---|---|---|---|
+| 2026-06-02 | CONTROL-PLANE-GCRC-GATE-001 | FINAL_MERGED_AND_VISUAL_VALIDATED | https://github.com/hbrasilia/failsafe/pull/186 | 22a9911 |
