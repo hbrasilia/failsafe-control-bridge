@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "current_status": "BLOCKED_BY_CREDENTIAL",
-  "active_packet": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
+  "active_packet": "ALPHA-IMPLANTATION-GAP-AUDIT-001",
   "next_action": "Provision GitHub Secrets and snapshot evidence, then rerun pre-gate.",
   "ssh_shell": "present_verified",
   "sudo": "present_verified",
@@ -9,5 +9,6 @@
   "snapshot": "blocked_by_access",
   "asustor": "blocked_by_access",
   "required_secrets": "missing_required",
-  "go_no_go": "NO_GO"
+  "go_no_go": "NO_GO",
+  "alpha_gap_audit": "completed"
 }
