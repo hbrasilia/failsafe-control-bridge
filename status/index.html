@@ -8,16 +8,15 @@
 <pre id="failsafe-status">
 CURRENT_STATUS=BLOCKED_BY_CREDENTIAL
 ACTIVE_PACKET=FS-INFRA-017-RLS-STAGE-001-PREGATE
-NEXT_ACTION=Await credentials provisioning and snapshot confirmation to rerun pre-gate.
-BLOCKER=STAGING_PHYSICAL_BLOCKED_WAITING_GATES
-SNAPSHOT=missing
-UFW=plan_only
-SSH_SECRET=missing
-DB_PASSWORD_SECRET=missing
-DATABASE_URL_SECRET=missing
-HUMAN_APPROVAL=pending
-SOURCE_OF_TRUTH=hbrasilia/failsafe private repo
-UPDATED_AT=2026-06-02T21:18:19-03:00
+NEXT_ACTION=Provision GitHub Secrets and snapshot evidence, then rerun pre-gate.
+SSH_SHELL=present_verified
+SUDO=present_verified
+UFW=present_verified
+SNAPSHOT=blocked_by_access
+ASUSTOR=blocked_by_access
+REQUIRED_SECRETS=missing_required
+GO_NO_GO=NO_GO
+UPDATED_AT=2026-06-02T21:57:00-03:00
 </pre>
 </body>
 </html>
