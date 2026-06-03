@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-06-02T22:05:00-03:00",
+  "updated_at": "2026-06-02T22:10:00-03:00",
   "current_status": "BLOCKED_BY_CREDENTIAL",
-  "active_packet": "ALPHA-IMPLANTATION-GAP-AUDIT-001",
+  "active_packet": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
   "latest_gcrc_status": "INVENTORY_ONLY_COMPLETED",
   "latest_accepted_decision": "DEC-028",
   "issueops_status": "ACTIVE_BY_GCRC_PR_195",
@@ -19,6 +19,5 @@
   "snapshot": "blocked_by_access",
   "asustor": "blocked_by_access",
   "required_secrets": "missing_required",
-  "go_no_go": "NO_GO",
-  "alpha_gap_audit": "completed"
+  "go_no_go": "NO_GO"
 }
