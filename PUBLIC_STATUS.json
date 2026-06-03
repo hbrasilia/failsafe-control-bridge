@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-06-02T22:15:00-03:00",
+  "updated_at": "2026-06-02T22:30:00-03:00",
   "current_status": "NEEDS_EXECUTION",
-  "active_packet": "CONTROL-CENTER-FSCTL-VALIDATION-001",
+  "active_packet": "ASSET-SERVICES-SCOPE-001",
   "latest_gcrc_status": "FINAL_MERGED_AND_VALIDATED",
   "latest_accepted_decision": "DEC-028",
-  "issueops_status": "ACTIVE_BY_GCRC_PR_196",
+  "issueops_status": "ACTIVE_BY_GCRC_PR_198",
   "missing_decisions": ["DEC-029", "DEC-030", "DEC-031", "DEC-032", "DEC-033"],
   "blocker_class": "FS_INFRA_BLOCKED_BY_CREDENTIALS_AND_SNAPSHOT",
-  "next_action": "Validate fsctl Windows/Linux and then sync dashboard status.",
+  "next_action": "Define product scope and requirements for Failsafe Asset & Service Management.",
   "human_action_required": true,
   "staging_physical": "BLOCKED_WAITING_GATES",
   "source_of_truth": "private repo hbrasilia/failsafe",
@@ -20,5 +20,7 @@
   "asustor": "blocked_by_access",
   "required_secrets": "missing_required",
   "go_no_go": "NO_GO",
-  "alpha_gap_audit": "completed"
+  "alpha_gap_audit": "completed",
+  "fsctl_validation": "completed",
+  "dashboard_status_sync": "completed"
 }
