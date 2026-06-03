@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "command_id": "FS-CMD-20260602-FS-INFRA-017-PREGATE",
-  "packet_id": "FS-INFRA-017-RLS-STAGE-001-PREGATE",
-  "mode": "PREGATE_ONLY",
+  "command_id": "FS-CMD-20260602-FS-INFRA-017-GATE-PROVISION",
+  "packet_id": "FS-INFRA-017-RLS-STAGE-001-GATE-PROVISION",
+  "mode": "GATE_PROVISION_ONLY",
   "status": "BLOCKED",
-  "next_action": "Wait for configuration of missing GitHub secrets and snapshot confirmation.",
+  "next_action": "Await credentials provisioning and snapshot confirmation.",
   "forbidden_actions": ["FS-INFRA", "staging_physical", "VPS", "database", "secrets", "deploy", "new_feature"]
 }
