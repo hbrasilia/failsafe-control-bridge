@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0",
   "updated_at": "2026-06-02T21:12:06-03:00",
-  "commit": "f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc",
+  "commit": "6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8",
   "primary": {
     "type": "github_pages_txt",
-    "url": "https://hbrasilia.github.io/failsafe-control-bridge/status/index.txt?v=f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc"
+    "url": "https://hbrasilia.github.io/failsafe-control-bridge/status/index.txt?v=6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8"
   },
   "secondary": {
     "type": "github_pages_json",
-    "url": "https://hbrasilia.github.io/failsafe-control-bridge/status/index.json?v=f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc"
+    "url": "https://hbrasilia.github.io/failsafe-control-bridge/status/index.json?v=6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8"
   },
   "fallback_api": {
     "type": "github_contents_api",
-    "txt": "https://api.github.com/repos/hbrasilia/failsafe-control-bridge/contents/status/index.txt?ref=f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc",
-    "json": "https://api.github.com/repos/hbrasilia/failsafe-control-bridge/contents/status/index.json?ref=f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc"
+    "txt": "https://api.github.com/repos/hbrasilia/failsafe-control-bridge/contents/status/index.txt?ref=6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8",
+    "json": "https://api.github.com/repos/hbrasilia/failsafe-control-bridge/contents/status/index.json?ref=6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8"
   },
   "fallback_raw": {
     "type": "raw_github",
-    "txt": "https://raw.githubusercontent.com/hbrasilia/failsafe-control-bridge/f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc/status/index.txt",
-    "json": "https://raw.githubusercontent.com/hbrasilia/failsafe-control-bridge/f76136a1c62eea8a6bc3a3ee5fcf56af6f4858bc/status/index.json"
+    "txt": "https://raw.githubusercontent.com/hbrasilia/failsafe-control-bridge/6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8/status/index.txt",
+    "json": "https://raw.githubusercontent.com/hbrasilia/failsafe-control-bridge/6fbace4710f1cce239c4a0e8274b9b77a0c7f0b8/status/index.json"
   }
 }
