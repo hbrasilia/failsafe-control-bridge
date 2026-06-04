@@ -1,1 +1,1 @@
-{"active_packet":"CONTROL-PLANE-GCRC-GATE-001","status":"ACTIVE","last_gcrc_status":"FINAL_MERGED_AND_VISUAL_VALIDATED","last_sync":"2026-06-02 23:00:02","staging_status":"BLOCKED_WAITING_GATES"}
+﻿{"last_gcrc_status":"FINAL_MERGED_AND_VISUAL_VALIDATED","status":"ACTIVE","active_packet":"CONTROL-PLANE-GCRC-GATE-001","last_sync":"2026-06-03 22:33:21","staging_status":"BLOCKED_WAITING_GATES"}

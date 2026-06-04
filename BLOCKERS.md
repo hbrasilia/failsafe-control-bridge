@@ -1,8 +1,8 @@
-# BLOCKERS — Bloqueios de Execução
+﻿# BLOCKERS â€” Bloqueios de ExecuÃ§Ã£o
 
-## 🚫 Staging Físico (BLOCKED_WAITING_GATES)
-O staging físico permanece bloqueado até a comprovação dos seguintes gates:
-1. Comprovação de Snapshot na VPS.
-2. Blindagem e validação das regras UFW do firewall.
+## ðŸš« Staging FÃ­sico (BLOCKED_WAITING_GATES)
+O staging fÃ­sico permanece bloqueado atÃ© a comprovaÃ§Ã£o dos seguintes gates:
+1. ComprovaÃ§Ã£o de Snapshot na VPS.
+2. Blindagem e validaÃ§Ã£o das regras UFW do firewall.
 3. Provisionamento de secrets SSH e credentials.
-4. Aprovação formal do gestor.
+4. AprovaÃ§Ã£o formal do gestor.
