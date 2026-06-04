@@ -22,7 +22,7 @@ if ($selected_file && !in_array($selected_file, $files)) {
     <title>Documentos Soberanos | Failsafe ECO</title>
     
     <!-- Meta Tags para SEO -->
-    <meta name="description" content="Mirror pÃºblico sanitizado dos documentos soberanos e marcos do ecossistema Failsafe ECO.">
+    <meta name="description" content="Mirror público sanitizado dos documentos soberanos e marcos do ecossistema Failsafe ECO.">
     <meta name="robots" content="noindex, nofollow">
     
     <!-- Google Fonts -->
@@ -420,7 +420,7 @@ if ($selected_file && !in_array($selected_file, $files)) {
         <!-- Header -->
         <header class="main-header">
             <div class="logo-area">
-                <span class="logo-icon">â–²</span>
+                <span class="logo-icon">▲</span>
                 <div class="logo-text">
                     <h1>FAILSAFE <span>ECO</span></h1>
                     <p class="subtitle">Documentos Soberanos Sanitizados</p>
@@ -466,9 +466,9 @@ if ($selected_file && !in_array($selected_file, $files)) {
                     </article>
                 <?php else: ?>
                     <div class="reader-placeholder">
-                        <div class="reader-placeholder-icon">ðŸ“–</div>
+                        <div class="reader-placeholder-icon">📖</div>
                         <h2>Selecione um documento</h2>
-                        <p>Escolha um dos arquivos na barra lateral para ler a especificaÃ§Ã£o tÃ©cnica.</p>
+                        <p>Escolha um dos arquivos na barra lateral para ler a especificação técnica.</p>
                     </div>
                 <?php endif; ?>
             </section>
@@ -476,8 +476,8 @@ if ($selected_file && !in_array($selected_file, $files)) {
 
         <!-- Footer -->
         <footer class="main-footer">
-            <p>Failsafe ECO Document Portal â€¢ Atualizado dinamicamente via Ponte de Controle.</p>
-            <p class="version-tag">Mirror v0.1-alpha â€¢ HostGator</p>
+            <p>Failsafe ECO Document Portal • Atualizado dinamicamente via Ponte de Controle.</p>
+            <p class="version-tag">Mirror v0.1-alpha • HostGator</p>
         </footer>
     </div>
 
@@ -504,9 +504,9 @@ if ($selected_file && !in_array($selected_file, $files)) {
                 .catch(err => {
                     document.getElementById('markdown-viewer').innerHTML = `
                         <div class="reader-placeholder" style="color: var(--clr-danger)">
-                            <div style="font-size: 3rem">âš ï¸</div>
+                            <div style="font-size: 3rem">⚠️</div>
                             <h2>Erro de carregamento</h2>
-                            <p>NÃ£o foi possÃ­vel carregar o arquivo selecionado.</p>
+                            <p>Não foi possível carregar o arquivo selecionado.</p>
                         </div>
                     `;
                 });
