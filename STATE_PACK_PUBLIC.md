@@ -98,7 +98,9 @@ governance: no-regression
 ## 17. PrÃ³ximo Packet Autorizado
 - **Ãšltimas ConclusÃµes**:
   - **OPS-DOCS-UNIFICATION-001** (G1): ConcluÃ­do (PR #205 mesclado).
-- **Atividade Ativa**: Executar os packets **OPS-PUBLIC-OBSERVABILITY-001** (G2) e **GATE-RECONCILE-001** (G3) em paralelo.
+  - **OPS-PUBLIC-OBSERVABILITY-001** (G2): ConcluÃ­do (PR #208 pronto para merge).
+  - **GATE-RECONCILE-001** (G3): ConcluÃ­do (PR #209 pronto para merge).
+- **Atividade Ativa**: Gate CEO 1 APROVADO conforme DEC-037. PrÃ³ximo: Configurar DNS control.failsafe.com.br + disparar G4 CONTROL-CENTER-SETUP-001.
 
 ## 18. AÃ§Ãµes Proibidas
 - NÃ£o fazer push direto ou alteraÃ§Ã£o na branch `main` sem aprovaÃ§Ã£o do CI/CD.
