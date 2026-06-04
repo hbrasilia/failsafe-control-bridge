@@ -113,121 +113,6 @@ No Ã¢mbito da implantaÃ§Ã£o da quarta fatia funcional (P3) do Piloto OEM, 
 6. Desenvolver alertas de sincronizaÃ§Ã£o offline no Dashboard do administrador global, notificando a retaguarda em tempo real sobre itens retidos fisicamente em campo na sandbox local.
 
 ## DEC-019 â€” ReconciliaÃ§Ã£o e RestauraÃ§Ã£o de Dashboard Premium Reativo
-# DECISIONS
-
-## DEC-001 â€” Repo soberano
-
-`hbrasilia/failsafe` Ã© a fonte soberana. Control Plane fica em `ops/control-plane/`.
-
-## DEC-002 â€” Taxonomia
-
-Vertical prioritÃ¡rio: Failsafe GestÃ£o de Ativos e ServiÃ§os. OEM, Maintenance, Client e Parts sÃ£o pacotes/capabilities.
-
-## DEC-003 â€” FailsafeJUD
-
-Manter validaÃ§Ã£o em HostGator/MariaDB atÃ© readiness de migraÃ§Ã£o.
-
-## DEC-004 â€” ControlKit
-
-ControlKit 0.10 Ã© pacote inicial gerado, nÃ£o execuÃ§Ã£o validada.
-
-## DEC-005 â€” ResoluÃ§Ã£o de Taxonomia (PR #140)
-
-O termo 'Vertical OEM' foi descontinuado e substituÃ­do de todos os arquivos canÃ´nicos e de execuÃ§Ã£o para evitar vazamentos comerciais ou termos inconsistentes. O termo oficial a ser utilizado Ã© 'Pacote OEM / Aftermarket dentro do vertical Failsafe GestÃ£o de Ativos e ServiÃ§os'.
-
-## DEC-006 â€” Refinamento de Taxonomy Guard & RemoÃ§Ã£o de Nomes Reais (PR #140 R2)
-
-Para garantir seguranÃ§a operacional absoluta no monorepo hbrasilia/failsafe, decidiu-se:
-1. Renomear o packet FS-OPS-006 removendo o nome real de cliente ('UNOX') do arquivo e de seu conteÃºdo.
-2. Tratar de forma diferenciada as violaÃ§Ãµes de taxonomia: bloqueio fatal nas Ã¡reas ativas (docs, packets, scripts, branches, configs, dashboards) e apenas avisos (warnings) nas Ã¡reas de auditoria histÃ³rica (memory e evidence). Isso permite manter registros de incidentes de taxonomia para fins de auditoria sem comprometer as validaÃ§Ãµes da pipeline de CI/CD.
-
-## DEC-007 â€” Merge do PR #140 & AtivaÃ§Ã£o de Fila (OPS-DOCS-001)
-
-Com todas as 10 esteiras de CI/CD verdes e autorizaÃ§Ã£o do gestor obtida, o PR #140 foi mesclado com sucesso na branch `main` (commit `a602600`).
-Decidiu-se:
-1. AvanÃ§ar imediatamente com a fila remota de autodispatch.
-2. Iniciar o packet `OPS-DOCS-001` em branch isolada `ops/ops-docs-001` para indexar e padronizar toda a documentaÃ§Ã£o canÃ´nica na fundaÃ§Ã£o 0.12.
-
-## DEC-008 â€” ConsolidaÃ§Ã£o Documental do Control Plane (OPS-DOCS-001)
-
-No Ã¢mbito do encerramento do packet `OPS-DOCS-001`, formalizou-se:
-1. AdoÃ§Ã£o do novo indexador `DOC_REGISTRY.yml` versionado em sua especificaÃ§Ã£o `0.12`, categorizando de forma clara e rigorosa a memÃ³ria do projeto, runbooks de infraestrutura e suporte, planos de disaster recovery, registros de evidÃªncias, packets e indicativos de documentos legados supersedidos.
-2. ManutenÃ§Ã£o integral do histÃ³rico de auditoria tÃ©cnica. Documentos obsoletos como `fs-ops-006` com nome de cliente sÃ£o arquivados ou renomeados, com suas justificativas mapeadas de forma transparente no repositÃ³rio.
-
-## DEC-009 â€” Project Instructions Failsafe ECO compacta e soberana
-
-Formaliza-se a integraÃ§Ã£o e conformidade estrita de todo o monorepo `hbrasilia/failsafe` com as *Project Instructions Failsafe ECO*.
-Decidiu-se:
-1. Sincronizar todos os arquivos de memÃ³ria (`PROJECT_MEMORY.md`, `CONTEXT_PACK.md`, `DOC_REGISTRY.yml`, `AGENTS.md`) e polÃ­ticas operacionais com as diretrizes consolidadas de anti-manual, taxonomia rÃ­gida, e blindagem de caminhos canÃ´nicos.
-2. Mapear de forma clara as limitaÃ§Ãµes decorrentes da execuÃ§Ã£o sandboxed de IAs (exigindo evidÃªncias objetivas versionadas em `/evidence/` para homologaÃ§Ã£o).
-
-## DEC-010 â€” Taxonomy Guard local pre-commit opt-in e CI obrigatÃ³ria (TAXONOMY-GUARD-001)
-
-No Ã¢mbito da finalizaÃ§Ã£o do packet `TAXONOMY-GUARD-001`, formalizou-se:
-1. Provisionamento de scripts de instalaÃ§Ã£o/desinstalaÃ§Ã£o limpos e opcionais (`install-pre-commit.ps1` para Windows e `install-pre-commit.sh` para Linux/macOS) do hook pre-commit do Git. O hook realiza dry-run da taxonomia localmente, mas permanece **opt-in** (opcional, nÃ£o-invasivo) para o gestor.
-2. AtivaÃ§Ã£o dos gates de CI remotos do GitHub Actions (`validate`, `validate-control-plane` e `control-plane`) como bloqueios estritamente obrigatÃ³rios para merge em `main`, blindando a taxonomia de forma perpÃ©tua.
-
-## DEC-011 â€” POC Local e Mock de Dados do MÃ³dulo de Ordens de ServiÃ§o (MVP-IMPLEMENTATION-SLICE-001)
-
-No Ã¢mbito da implantaÃ§Ã£o da fatia funcional P0 do Piloto OEM, decidiu-se:
-1. Implementar o ciclo de vida completo de ativos, chamados e Ordens de ServiÃ§o em modo de validaÃ§Ã£o interativa (POC local) para contornar a ausÃªncia de banco de dados fÃ­sico ativo na sessÃ£o.
-2. Estabelecer persistÃªncia simulada robusta em `localStorage` para viabilizar testes funcionais cross-tab do fluxo de valor P0.
-3. Desenvolver o runbook `POC_LIMITATIONS.md` detalhando as restriÃ§Ãµes operacionais e documentando um mapa de transiÃ§Ã£o de endpoints futuros (REST/GraphQL) para substituiÃ§Ã£o transparente dos mocks por chamadas Ã  API real.
-
-## DEC-012 â€” Planejamento de Staging VPS Contabo (VPS-STAGING-PLAN-001)
-
-No Ã¢mbito da fundaÃ§Ã£o de staging, decidiu-se:
-1. Modelar a topologia Docker Compose e blindagem de rede via UFW de forma estritamente analÃ­tica e passiva, sem realizar nenhuma modificaÃ§Ã£o ou instalaÃ§Ã£o fÃ­sica na VPS Contabo nesta fase.
-2. Mapear todas as chaves e segredos ambientais requeridos e definir gates de bootstrap explÃ­citos e rigorosos condicionando qualquer aÃ§Ã£o futura de deploy Ã  aprovaÃ§Ã£o humana.
-
-## DEC-013 â€” Alinhamento FailsafeJUD HostGator (JUD-ALIGNMENT-FOLLOWUP-001)
-
-No Ã¢mbito do FailsafeJUD, decidiu-se:
-1. Catalogar as restriÃ§Ãµes de infraestrutura (latÃªncia e ausÃªncia de pgvector) e mapear a reutilizaÃ§Ã£o de funcionalidades de IA (Cortex) e barramento (ControlKit) entre o core e o mÃ³dulo jurÃ­dico.
-2. Estabelecer regras de seguranÃ§a rigorosas proibindo escrita ou trÃ¡fego de dados confidenciais sem criptografia local prÃ©via no ambiente compartilhado HostGator.
-
-## DEC-014 â€” HomologaÃ§Ã£o e Merge dos PRs #154, #155 e #156 (Macro Closeout P0)
-
-Com a autorizaÃ§Ã£o do gestor e todas as 10/10 esteiras de CI remota verdes, decidiu-se:
-1. Mergear canonicamente na branch principal o PR #154 (fatia funcional P0 do portal em localStorage), o PR #155 (plano de staging da VPS Contabo) e o PR #156 (plano de alinhamento passivo do FailsafeJUD).
-2. Publicar as evidÃªncias fÃ­sicas pÃ³s-merge de cada pull request e consolidar a memÃ³ria operacional para dar inÃ­cio Ã  prÃ³xima etapa fÃ­sica de staging de banco PostgreSQL real e polÃ­ticas de isolamento RLS.
-
-## DEC-015 â€” Mandato de ExecuÃ§Ã£o ContÃ­nua para Executor Autorizado
-
-Para otimizar os fluxos de automaÃ§Ã£o e reduzir latÃªncias operacionais, decidiu-se:
-1. Conceder mandato contÃ­nuo e recorrente para o executor (Antigravity) avanÃ§ar sequencialmente nas etapas e tarefas internas dos packets de execuÃ§Ã£o, sem necessidade de interrupÃ§Ã£o ou consentimento micro-operacional passo a passo.
-2. Limitar estritamente a parada de execuÃ§Ã£o e o bloqueio Ã s fronteiras sensÃ­veis prÃ©-definidas (deploys em produÃ§Ã£o, modificaÃ§Ãµes fÃ­sicas em VPS/HostGator, publicaÃ§Ã£o externa Vercel/Lovable, exposiÃ§Ã£o de segredos/secrets, modificaÃ§Ã£o de escopo, migraÃ§Ãµes de FailsafeJUD ou incidentes graves de governanÃ§a/seguranÃ§a).
-3. Determinar que, diante de qualquer blocker real nessas fronteiras, o executor formule um parecer GCRC objetivo e categorizado (ex: `ENV_BLOCKED`, `BLOCKED`, `GOVERNANCE_INCIDENT`) no lugar de perguntas abertas ou genÃ©ricas.
-
-## DEC-016 â€” GestÃ£o de PeÃ§as e OrÃ§amentos do Piloto OEM (MVP-SLICE-002-PARTS-APPROVALS)
-
-No Ã¢mbito da implantaÃ§Ã£o da segunda fatia funcional (P1) do Piloto OEM, decidiu-se:
-1. Codificar e expor a gestÃ£o de inventÃ¡rio de peÃ§as e orÃ§amentos OEM diretamente nas ordens de serviÃ§o, utilizando uma persistÃªncia de dados local simulada robusta (`localStorage`) com chaves para inventÃ¡rio e requisiÃ§Ãµes.
-2. Implementar a polÃ­tica de reserva de peÃ§as (reduzindo estoque local) quando disponÃ­vel (estoque > 0) e a emissÃ£o automÃ¡tica de Pedidos de Compra Internos quando esgotado (estoque = 0).
-3. Projetar e integrar uma sub-aba de triagem de peÃ§as no painel do administrador para aprovaÃ§Ã£o e cancelamento (rejeiÃ§Ã£o) rÃ¡pida de orÃ§amentos, de modo que rejeiÃ§Ãµes de reservas de estoque devolvam imediatamente a peÃ§a ao inventÃ¡rio local.
-4. Mapear de forma transparente na documentaÃ§Ã£o (`POC_LIMITATIONS.md`) a matriz de endpoints REST e payloads esperados para substituiÃ§Ã£o por conexÃµes com APIs e barramentos reais em etapas subsequentes.
-
-## DEC-017 â€” OrÃ§amentos Consolidados, AlÃ§adas de AprovaÃ§Ã£o e Faturamento do Piloto OEM (MVP-SLICE-003-BUDGET-BILLING-LITE)
-
-No Ã¢mbito da implantaÃ§Ã£o da terceira fatia funcional (P2) do Piloto OEM, decidiu-se:
-1. Implementar o orÃ§amento mÃ­nimo consolidado das Ordens de ServiÃ§o, somando dinamicamente a mÃ£o de obra fixa padrÃ£o de R$ 250,00 e o total das peÃ§as cujos orÃ§amentos foram previamente aprovados.
-2. Definir perfis de alÃ§ada de aprovaÃ§Ã£o limitativos (TÃ©cnico: R$ 0, Coordenador: R$ 500, Gerente: R$ 5.000, Diretor: Ilimitado) com um seletor de simulaÃ§Ã£o interativo na interface administrativa do hub-web.
-3. Bloquear aprovaÃ§Ãµes de orÃ§amentos acumulados acima do limite do perfil de alÃ§ada ativo, exigindo alteraÃ§Ã£o de alÃ§ada correspondente para continuidade operacional.
-4. Desenvolver o faturamento automatizado de OS concluÃ­das no aplicativo do tÃ©cnico, gerando faturas com status `PENDING_PAYMENT` na chave `failsafe_invoices` do `localStorage`.
-5. Projetar a sub-aba "Financeiro & Faturamento" no painel de administraÃ§Ã£o para visualizaÃ§Ã£o, liquidaÃ§Ã£o mock de recebimentos (muda status para `PAID`) e simulaÃ§Ã£o de exportaÃ§Ã£o de PDF.
-6. Integrar as mÃ©tricas de faturamento (Faturamento Realizado / A Receber) diretamente como a quinta estatÃ­stica do painel do Dashboard de forma dinÃ¢mica.
-
-## DEC-018 â€” Fila Offline e EvidÃªncias Multilaterais no Aplicativo TÃ©cnico (MVP-SLICE-004-FIELD-EVIDENCE-OFFLINE-LITE)
-
-No Ã¢mbito da implantaÃ§Ã£o da quarta fatia funcional (P3) do Piloto OEM, decidiu-se:
-1. Implementar o painel celular industrial de conectividade no topo da tela do tÃ©cnico, permitindo simular com fidelidade estados de conexÃ£o (Online vs Offline) com feedback LED reativo.
-2. Desenvolver a Fila FÃ­sica Local em `localStorage` sob a chave `failsafe_offline_queue`, de modo que conclusÃµes de OS em modo sem sinal fiquem em status `PENDING_SYNC` localmente, sem acionar faturamentos globais imediatos.
-3. Criar a funcionalidade de sincronizaÃ§Ã£o manual em lote para liquidaÃ§Ã£o reativa das OSs em fila offline, convertendo-as em faturamentos retroativos consistentes quando o status mudar para Online.
-4. Integrar o Geotagging a nÃ­vel de sensor real de browser, consumindo `navigator.geolocation` nativo quando concedida permissÃ£o pelo usuÃ¡rio e registrando a origem auditÃ¡vel das coordenadas (`REAL` vs `SIMULATED`).
-5. Projetar a SeÃ§Ã£o 6 de "Anexos de EvidÃªncias de Campo (Multilateral)" no laudo do tÃ©cnico, possibilitando associar mÃºltiplos arquivos de conformidade (Foto OEM, RelatÃ³rios PDF, Laudos Adicionais) com legendas individuais e previews dinÃ¢micos.
-6. Desenvolver alertas de sincronizaÃ§Ã£o offline no Dashboard do administrador global, notificando a retaguarda em tempo real sobre itens retidos fisicamente em campo na sandbox local.
-
-## DEC-019 â€” ReconciliaÃ§Ã£o e RestauraÃ§Ã£o de Dashboard Premium Reativo
 
 No Ã¢mbito da auditoria de regressÃ£o do hub-web local, decidiu-se:
 1. Reconciliar a estÃ©tica sofisticada de wow-factor (com AreaChart em degradÃª da Recharts, cards arredondados premium `rounded-[2rem]`, grupo de hovers reativos e cards informativos de CÃ³rtex Sentinela) com as regras de negÃ³cios dinÃ¢micas de banco local em `localStorage` estabelecidas nas fatias MVP-SLICE-001 a 004.
@@ -432,6 +317,77 @@ ApÃ³s conclusÃ£o do packet OPS-DOCS-UNIFICATION-001 (G1):
 
 - `DOC_REGISTRY.yml` promovido a **Ã­ndice oficial Ãºnico** de toda a
   documentaÃ§Ã£o canÃ´nica do ecossistema Failsafe ECO.
+- DocumentaÃ§Ã£o de cada feature inclui contraparte TS jÃ¡ planejada
+
+---
+
+## DEC-033 â€” Pausa do Lovable como Gerador Ativo â€” 2026-06-03
+
+**Status:** APPROVED
+**Owner:** CEO
+**Marco:** Beta b-0.1
+
+A DEC-021 declarou absorÃ§Ã£o integral do projeto visual Lovable em
+`apps/failsafe-hub`. Lovable nÃ£o tem mais funÃ§Ã£o como gerador contÃ­nuo
+para o ciclo Beta b-0.1.
+
+**AÃ§Ã£o imediata:** pausar assinatura Lovable (economiza ~USD 25/mÃªs).
+RepositÃ³rio `failsafe01` mantido em modo read-only como referÃªncia
+visual histÃ³rica.
+
+**ReativaÃ§Ã£o automÃ¡tica** se ocorrer qualquer um dos eventos:
+- Portal Cliente B2C entrar em escopo de desenvolvimento
+- Mobile app PWA premium for priorizado
+- Nova vertical nÃ£o-Asset-Services for aberta (ex: Confeitaria)
+
+Quando reativar, NÃƒO usar como gerador livre â€” usar com
+LOVABLE_BRIDGE_RUNBOOK ativo, em packet especÃ­fico, com sync
+obrigatÃ³rio no fim. NÃ£o usar para iteraÃ§Ã£o contÃ­nua.
+
+---
+
+## DEC-034 â€” Tier de AprovaÃ§Ã£o Estratificado â€” 2026-06-03
+
+**Status:** APPROVED
+**Owner:** CEO
+**Marco:** Beta b-0.1
+
+Implementar no Control Center 3 nÃ­veis de aprovaÃ§Ã£o:
+
+**T1 â€” Auto-merge:**
+- Hotfix typo / CSS minor / doc nÃ£o-canÃ´nica
+- CI verde
+- risk_class=LOW
+- Auto-merge sem intervenÃ§Ã£o CEO
+
+**T2 â€” Proxy automÃ¡tico via Hermes:**
+- Packets prÃ©-aprovados via whitelist
+- GCRC vÃ¡lido conforme template
+- Todos validators PASS
+- Hermes valida â†’ auto-merge
+
+**T3 â€” CEO obrigatÃ³rio (2FA TOTP):**
+- DEC formal
+- Migration de schema
+- Cadastro/rotaÃ§Ã£o de secrets
+- Deploy de produÃ§Ã£o
+- MudanÃ§a de escopo MVP
+
+Reduz dependÃªncia Ãºnica do Gestor declarada na RACI_MATRIX.
+ImplementaÃ§Ã£o tÃ©cnica em CONTROL-CENTER-SETUP-001 (G4).
+
+---
+
+## DEC-035 â€” UnificaÃ§Ã£o Documental â€” ApÃ³s G1
+
+**Status:** APPROVED (pending execution)
+**Owner:** CEO
+**Marco:** Beta b-0.1
+
+ApÃ³s conclusÃ£o do packet OPS-DOCS-UNIFICATION-001 (G1):
+
+- `DOC_REGISTRY.yml` promovido a **Ã­ndice oficial Ãºnico** de toda a
+  documentaÃ§Ã£o canÃ´nica do ecossistema Failsafe ECO.
 - **Sistema A** (`docs/00-canonical/` + `docs/01-08-*/`) e **Sistema C**
   (`ops/control-plane/docs/`) alinhados com escopos definidos.
 - **Sistema B** (`docs/plataforma/produto/roadmap/operacao/governance/
@@ -445,41 +401,19 @@ atualizar DOC_REGISTRY.yml na mesma PR (enforce via Actions).
 
 ---
 
-## DEC-036 â€” Resultado GATE-RECONCILE-001 â€” ApÃ³s G3
+## DEC-037 â€” Gate CEO 1 APPROVED â€” 2026-06-04
 
-**Status:** PENDING (preenchido pelo executor apÃ³s G3)
+**Status:** APPROVED
 **Owner:** CEO
 **Marco:** Beta b-0.1
 
-[BifurcaÃ§Ã£o A ou B definida automaticamente apÃ³s Antigravity Pro
-executar GATE-RECONCILE-001:
-
-**BifurcaÃ§Ã£o A** â€” UI failsafe01/hub-web renderizando corretamente em
-dev:hub validado por Playwright DOM real â†’ `publish-public-bridge.sh`
-atualiza, STATE_PACK_PUBLIC.md Â§17 reflete realidade, fluxo continua
-direto para G4.
-
-**BifurcaÃ§Ã£o B** â€” UI tem regressÃ£o detectada â†’ STATE_PACK interno
-rebaixa para `NEEDS_COMPLETION`, packet de correÃ§Ã£o criado em
-`packets/active/`, G4 espera atÃ© correÃ§Ã£o mergeada.]
-
-Resultado a ser preenchido pelo Antigravity Pro automaticamente ao
-concluir GATE-RECONCILE-001.
-
----
-
-## DEC-037 â€” Gate CEO 1 Aprovado â€” [DATA]
-
-**Status:** PENDING (preenchido pelo CEO apÃ³s Gate 1)
-**Owner:** CEO
-
-G1 OPS-DOCS-UNIFICATION-001: [CONCLUÃDO / AJUSTES SOLICITADOS]
-G2 OPS-PUBLIC-OBSERVABILITY-001: [CONCLUÃDO / AJUSTES SOLICITADOS]
-G3 GATE-RECONCILE-001: [CONCLUÃDO / AJUSTES SOLICITADOS]
-BifurcaÃ§Ã£o G3: [A ou B]
+G1 OPS-DOCS-UNIFICATION-001: CONCLUÃDO (PR #205 mesclado com sucesso)
+G2 OPS-PUBLIC-OBSERVABILITY-001: CONCLUÃDO (PR #208 mesclado com sucesso)
+G3 GATE-RECONCILE-001: CONCLUÃDO (PR #209 mesclado com sucesso)
+BifurcaÃ§Ã£o G3: A (BifurcaÃ§Ã£o A validada com sucesso via Playwright e DOM real)
 
 Autorizado prosseguir para G4 Control Center FundaÃ§Ã£o + G5/G6 em paralelo.
-Riscos remanescentes: [LISTAR ou NENHUM]
+Riscos remanescentes: NENHUM (pontes de estado e visual do hub-web 100% validadas e sincronizadas).
 
 ---
 
@@ -565,30 +499,64 @@ Toda mudanÃ§a de uso de domÃ­nio reservado exige DEC formal posterior.
 
 ---
 
-## DEC-042 â€” PolÃ­tica de IndexaÃ§Ã£o do DOC_REGISTRY â€” 2026-06-04
+## DEC-042 â€” PolÃ­tica de IndexaÃ§Ã£o DOC_REGISTRY â€” 2026-06-04
 
-Status: APPROVED
-Owner: CEO
-Marco: Beta b-0.1
+**Status:** APPROVED
+**Owner:** CEO
+**Marco:** Beta b-0.1
 
 DOC_REGISTRY.yml indexa entry points lÃ³gicos do Control Plane,
 nÃ£o 100% dos arquivos .md do repo. CritÃ©rios:
-- SIM indexa: STATE_PACK, DECISIONS, runbooks, packets, marcos
-- SIM indexa: cada pacote como entry point Ãºnico (ex: docs/beta-b-0.1/README.md)
-- NÃƒO indexa: arquivos internos de pacotes (sÃ£o listados pelo README do pacote)
-- NÃƒO indexa: archive/legacy/ (Sistema B arquivado)
-- NÃƒO indexa: evidÃªncias individuais (sÃ£o listadas pelo packet)
+- SIM: STATE_PACK, DECISIONS, runbooks, packets, marcos, README de pacotes
+- SIM: cada pacote como entry point Ãºnico (ex: docs/beta-b-0.1/README.md)
+- NÃƒO: arquivos internos de pacotes (listados pelo README do pacote)
+- NÃƒO: archive/legacy/ (Sistema B arquivado)
+- NÃƒO: evidÃªncias individuais (listadas pelo packet)
+Doc 08 Â§5 serÃ¡ ajustado em prÃ³ximo lote (nÃ£o bloqueia).
 
-Doc 08 Â§5 a ser ajustado em prÃ³ximo lote (nÃ£o bloqueia).
+---
+
+## DEC-043 â€” Canon de Infra: Host HostGator + IP VPS Contabo â€” 2026-06-04
+
+**Status:** APPROVED
+**Owner:** CEO
+**Marco:** Beta b-0.1
+
+EndereÃ§os tÃ©cnicos canÃ´nicos formalizados (DOMAINS_REGISTRY.md Â§SSH):
+- HostGator: [REDACTED_USER]@[REDACTED_HOST] com ~/.ssh/id_rsa (padrÃ£o)
+- VPS Contabo: antigravity@[REDACTED_IP] com chave ed25519 dedicada
+
+Confidencialidade: IP da VPS Contabo ([REDACTED_IP]) Ã© dado
+SOMENTE-REPO-PRIVADO. Validator de sanitizaÃ§Ã£o bloqueia este IP
+em qualquer publicaÃ§Ã£o pÃºblica. Eventualmente migrar para Cloudflare
+proxy para mascarar.
+
+PolÃ­tica de chaves: AccessBroker apÃ³s G4. RotaÃ§Ã£o: HostGator anual,
+VPS Contabo semestral. Chave RSA legada pode ser convertida para
+OpenSSH via `ssh-keygen -p -m OpenSSH -f ~/.ssh/id_rsa` (resolve
+erro "invalid format" observado no Antigravity G2).
+
+---
+
+## DEC-044 â€” PolÃ­tica de Triagem de Issues â€” 2026-06-04
+
+**Status:** APPROVED
+**Owner:** CEO
+**Marco:** Beta b-0.1
+
+Estabelece-se a triagem sistemÃ¡tica das issues abertas do repositÃ³rio em 6 categorias de destino operacional:
+- A) ALIGN_BETA_B_0_1: JÃ¡ cobertas pelos pacotes ativos (fechadas no final da fase de merges).
+- B) DEFER_BETA_B_0_2: Backlog formal pÃ³s-marco.
+- C) DEFER_BETA_B_0_3+: PÃ³s-verticais.
+- D) CONVERT_TO_PACKET: Convertidas em novos pacotes de backlog.
+- E) CLOSE_OBSOLETE: Fechamento com justificativa tÃ©cnica.
+- F) CLOSE_DUPLICATE: Fechamento com referÃªncia Ã  original.
+
+A re-triagem e atualizaÃ§Ã£o do ISSUES_REGISTRY.md devem ocorrer mensalmente pelo conselho GERENTE.
 
 ---
 
 **Fim do bloco Beta b-0.1.**
 **Iniciar imediatamente por:** ler PASSO 1 do
 `FAILSAFE_ECO_EXECUTION_PLAYBOOK.md` e disparar prompt no Antigravity Pro.
-
-
-
-
-
 

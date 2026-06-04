@@ -84,12 +84,14 @@ governance: no-regression
 - **PR #184 (Mesclado)**: Hotfix definitivo de tela branca (plugin Vite SWC, children Failsafe.tsx e Login.tsx redirect).
 - **PR #185 (Mesclado)**: Enforce do Estado CanÃ´nico e CriaÃ§Ã£o do STATE_PACK.md sob a DEC-026.
 - **PR #205 (Mesclado)**: UnificaÃ§Ã£o documental (G1) e DOC_REGISTRY.yml Ãºnico.
+- **PR #208 (Mesclado)**: Status pÃºblico failsafe.com.br operacional (G2).
+- **PR #209 (Mesclado)**: Gate-reconcile bifurcaÃ§Ã£o A validada (G3).
 
 ## 14. PRs Pendentes
 - Nenhum PR pendente no momento.
 
 ## 15. Ãšltimo GCRC Aceito
-- **Status**: COMPLETED (PR #205 mesclado com sucesso, validando a conclusÃ£o do packet OPS-DOCS-UNIFICATION-001).
+- **Status**: COMPLETED (PRs #208 e #209 mesclados. G1+G2+G3 concluÃ­dos. Gate CEO 1 aprovado).
 
 ## 16. GCRCs Rebaixados / Falsos Positivos
 - DeclaraÃ§Ãµes anteriores de paridade visual baseadas em build verde sem DOM renderizado ativamente na porta 8080.
@@ -98,9 +100,9 @@ governance: no-regression
 ## 17. PrÃ³ximo Packet Autorizado
 - **Ãšltimas ConclusÃµes**:
   - **OPS-DOCS-UNIFICATION-001** (G1): ConcluÃ­do (PR #205 mesclado).
-  - **OPS-PUBLIC-OBSERVABILITY-001** (G2): ConcluÃ­do (PR #208 pronto para merge).
-  - **GATE-RECONCILE-001** (G3): ConcluÃ­do (PR #209 pronto para merge).
-- **Atividade Ativa**: Gate CEO 1 APROVADO conforme DEC-037. PrÃ³ximo: Configurar DNS control.failsafe.com.br + disparar G4 CONTROL-CENTER-SETUP-001.
+  - **OPS-PUBLIC-OBSERVABILITY-001** (G2): ConcluÃ­do (PR #208 mesclado).
+  - **GATE-RECONCILE-001** (G3): ConcluÃ­do (PR #209 mesclado).
+- **Atividade Ativa**: Gate CEO 1 APROVADO. PrÃ³ximo: G4 CONTROL-CENTER-SETUP-001 + Issues Registry em paralelo.
 
 ## 18. AÃ§Ãµes Proibidas
 - NÃ£o fazer push direto ou alteraÃ§Ã£o na branch `main` sem aprovaÃ§Ã£o do CI/CD.

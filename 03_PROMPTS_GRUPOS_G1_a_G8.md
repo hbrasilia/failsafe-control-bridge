@@ -105,7 +105,7 @@ LEITURA OBRIGATÃ“RIA:
 
 CONTEXTO ADICIONAL CONFIRMADO PELO CEO:
 - Subdomain criado no cPanel HostGator: status.failsafe.com.br
-- Document Root: ~/status.failsafe.com.br/
+- Document Root: /public_html/status/
 - SSL Let's Encrypt ativo
 - SSH HostGator funcional (chave jÃ¡ configurada em FS-OPS-002)
 - Bridge pÃºblica github.com/hbrasilia/failsafe-control-bridge ativa
@@ -114,8 +114,8 @@ DURAÃ‡ÃƒO: 2 dias Ãºteis.
 
 DIRETRIZES ESPECÃFICAS:
 1. Conectar via SSH HostGator usando chave configurada
-2. Estrutura em ~/status.failsafe.com.br/:
-   ~/status.failsafe.com.br/
+2. Estrutura em /public_html/status/:
+   /public_html/status/
    â”œâ”€â”€ index.html (responsive, lÃª /api/*.json via fetch)
    â”œâ”€â”€ api/
    â”‚   â”œâ”€â”€ state.json
@@ -138,7 +138,7 @@ DIRETRIZES ESPECÃFICAS:
    - Roda a cada 5 minutos (cPanel cron UI)
    - curl raw.githubusercontent.com/hbrasilia/failsafe-control-bridge/main/STATE_PACK_PUBLIC.md
    - Parse markdown â†’ JSON normalizado
-   - Salva em ~/status.failsafe.com.br/api/state.json
+   - Salva em /public_html/status/api/state.json
    - Mesma coisa para NEXT_ACTIONS_QUEUE.md, COMMAND_CURRENT.md, etc.
    - Log de execuÃ§Ã£o em /home/[user]/logs/status-sync.log
 
@@ -151,9 +151,9 @@ DIRETRIZES ESPECÃFICAS:
    - Footer: "Gerado automaticamente. NÃ£o edite manualmente."
 
 5. Auditoria sanitizaÃ§Ã£o ANTES do go-live:
-   - grep -r "secret\|password\|token\|key" ~/status.failsafe.com.br/ â†’ zero
-   - grep -r "192.168\|10\.\|127\." ~/status.failsafe.com.br/ â†’ zero
-   - grep -r "C:\\\\\|/home/[user]\|/Users/" ~/status.failsafe.com.br/ â†’ zero
+   - grep -r "secret\|password\|token\|key" /public_html/status/ â†’ zero
+   - grep -r "192.168\|10\.\|127\." /public_html/status/ â†’ zero
+   - grep -r "C:\\\\\|/home/[user]\|/Users/" /public_html/status/ â†’ zero
    - Documentar em SANITIZATION_AUDIT.md
 
 6. SEO:

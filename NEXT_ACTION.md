@@ -49,7 +49,8 @@
 35. **Execute Unblocked ALPHA Governance Option B Batch (ALPHA-GOVERNANCE-OPTION-B-BATCH-001)**: [CONCLUÃDO - Validada Prompt Budget, FMEA/RACI formalizados, LGPD/Suporte alinhados e fila de packets limpa. PR #200].
 36. **Dashboard Status Schema and fsctl Hotfix (DASHBOARD-FSCTL-HOTFIX-001)**: [CONCLUÃDO - CorreÃ§Ã£o de quebra de Array.map no index.html, preenchimento de status.json e loop de menu interativo no fsctl].
 37. **Dashboard & fsctl Follow-up Fix (DASHBOARD-FSCTL-HOTFIX-001-FOLLOWUP)**: [CONCLUÃDO - CorreÃ§Ã£o dos loops interativos padrÃ£o locais e fallback do Start-Process no Windows].
-38. **PrÃ³xima Fila PrioritÃ¡ria (Bloqueada)**: Iniciar o packet **FS-INFRA-017 / RLS-STAGE-001** (implantaÃ§Ã£o fÃ­sica de banco PostgreSQL com `pgvector` e RLS na VPS Contabo) assim que as credenciais GitHub Secrets e snap/backup Contabo forem liberados.
+38. **Status Page PÃºblico HostGator (OPS-PUBLIC-OBSERVABILITY-001)**: [CONCLUÃDO - Criado o status page pÃºblico em status.failsafe.com.br, script de sincronizaÃ§Ã£o cron PHP e SEO configurado].
+39. **PrÃ³xima Fila PrioritÃ¡ria (Bloqueada)**: Iniciar o packet **FS-INFRA-017 / RLS-STAGE-001** (implantaÃ§Ã£o fÃ­sica de banco PostgreSQL com `pgvector` e RLS na VPS Contabo) assim que as credenciais GitHub Secrets e snap/backup Contabo forem liberados.
 
 
 ## ðŸš§ Gates Humanos
