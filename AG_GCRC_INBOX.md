@@ -1,4 +1,4 @@
-﻿# AG GCRC Inbox
+# AG GCRC Inbox
 
 Fila de entrada para pareces GCRC.
 

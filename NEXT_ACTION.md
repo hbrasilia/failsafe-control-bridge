@@ -1,4 +1,4 @@
-﻿# NEXT_ACTION â€” PrÃ³ximas AÃ§Ãµes do Failsafe ECO
+# NEXT_ACTION — Próximas Ações do Failsafe ECO
 
 # Next Actions Queue — ControlKit 0.12
 
@@ -66,5 +66,3 @@ O provisionamento físico do ambiente de Staging na VPS Contabo está bloqueado 
     - `STAGING_DB_PASSWORD`
     - `STAGING_DATABASE_URL`
 4.  **Aprovação Física**: Consentimento formalizado do gestor em NEXT_ACTIONS_QUEUE.md / DECISIONS.md.
-
-
