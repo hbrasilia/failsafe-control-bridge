@@ -9,7 +9,7 @@
 ---
 document_id: state-pack-beta-v2
 version: v0.1-Alfa-1
-fase_atual: BETA_V2_G3_AGUARDANDO
+fase_atual: G3_EM_ANDAMENTO
 data_atualizacao: 2026-06-07
 owner: CEO
 ---
